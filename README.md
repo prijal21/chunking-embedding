@@ -14,15 +14,19 @@ For embeddings I compared 4 open-source models on generation speed and how well 
 - Computed cosine similarity between sentence pairs and plotted a heatmap to see which chunks were too similar or too far apart
 - Connected Gemini 2.5 Flash at the end to test full end-to-end question answering
 
-## Notebooks
+## Run the notebooks directly
 
-- `Chunking&Embedings.ipynb` - the main chunking experiments
-- `Compare Open SOurce Embedding Models for RAG.ipynb` - model comparison
-- `Embeddings_and_Chunking_with_LlamaIndex_and_Gemini.ipynb` - full RAG setup with LlamaIndex and Gemini
+Click any badge below to open that notebook in Google Colab and run it right away.
+
+| Notebook | Open |
+|----------|------|
+| Chunking Experiments | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prijal21/chunking-embedding/blob/main/Chunking%26Embedings.ipynb) |
+| Compare Open Source Embedding Models | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prijal21/chunking-embedding/blob/main/Compare%20Open%20SOurce%20Embedding%20Models%20for%20RAG.ipynb) |
+| Full RAG Setup with LlamaIndex and Gemini | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prijal21/chunking-embedding/blob/main/Embeddings_and_Chunking_with_LlamaIndex_and_Gemini.ipynb) |
 
 ## How to run
 
-1. Open any notebook in Google Colab
+1. Click any badge above to open it in Colab
 2. Click the key icon on the left sidebar and add a secret named `GOOGLE_API_KEY` with your Gemini API key
 3. Run all cells from top to bottom
 
