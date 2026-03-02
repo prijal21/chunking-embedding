@@ -1,36 +1,36 @@
-# Chunking Strategy & Embedding Model Research for RAG
+# 🧩 Chunking & Embedding Research for RAG
 
-I wanted to understand how different ways of splitting text and different embedding models affect retrieval quality in a RAG pipeline. So I ran a series of experiments to compare them before picking one for the actual pipeline.
+Before building a RAG pipeline I wanted to actually understand what happens when you change how you split text or swap out embedding models. So I ran a bunch of experiments and compared the results. Turns out it makes a bigger difference than I expected.
 
-## What I tested
+## 🔬 What I tested
 
-For chunking, I tried three approaches: fixed-length, overlapping, and semantic. I measured things like chunk count and average character length to see how each one behaves on the same document.
+**Chunking strategies** — I tried three: fixed-length, overlapping, and semantic. Fixed-length is simple but can cut sentences mid-thought. Overlapping helps with context at chunk boundaries. Semantic tries to split at natural topic breaks. I measured chunk count and average character length across all three on the same document.
 
-For embeddings, I compared 4 open-source models on how fast they generate embeddings and how well they capture meaning. The goal was to find something that works well without being too slow or expensive.
+**Embedding models** — Compared 4 open-source models on speed and how well they captured meaning. Some were faster but missed nuance, some were slower but significantly better at similarity tasks. The goal was to find the sweet spot for RAG without overspending on compute.
 
-## Other things covered
+## 📊 Other stuff in here
 
-- Built a ChromaDB vector store using LlamaIndex to store and query the embeddings
-- Computed cosine similarity between sentence pairs and plotted a heatmap to visualize how similar chunks are to each other
-- Connected Gemini 2.5 Flash as the LLM so I could test full end-to-end question answering
+- Built a ChromaDB vector store using LlamaIndex and tested queries against it
+- Computed cosine similarity between sentence pairs and plotted a heatmap — really useful for seeing which chunks are too similar or too far apart
+- Hooked up Gemini 2.5 Flash at the end to test full end-to-end QA
 
-## Notebooks
+## 📂 Notebooks
 
-- `Chunking&Embedings.ipynb` - main chunking experiments
-- `Compare Open SOurce Embedding Models for RAG.ipynb` - embedding model comparison
-- `Embeddings_and_Chunking_with_LlamaIndex_and_Gemini.ipynb` - full RAG setup with LlamaIndex and Gemini
+- `Chunking&Embedings.ipynb` — the chunking experiments 🍕
+- `Compare Open SOurce Embedding Models for RAG.ipynb` — model comparison
+- `Embeddings_and_Chunking_with_LlamaIndex_and_Gemini.ipynb` — full setup with LlamaIndex + Gemini
 
-## Stack
-Python, LlamaIndex, ChromaDB, HuggingFace Sentence Transformers, Gemini 2.5 Flash, Scikit-learn, Matplotlib
+## 🚀 Try it yourself
 
-## How to run it
+Runs fully on Google Colab.
 
-Everything runs on Google Colab, nothing to install locally.
+1. Open any notebook in Colab
+2. Click the 🔑 key icon on the left sidebar → add a secret called `GOOGLE_API_KEY`
+3. Paste your Gemini API key and run all cells
 
-1. Open any notebook from this repo in Colab
-2. Add your Gemini API key in Colab Secrets (key icon on the left sidebar) under the name `GOOGLE_API_KEY`
-3. Run cells from top to bottom
+> Free Gemini API key at [aistudio.google.com](https://aistudio.google.com)
 
-A good starting point is `Chunking&Embedings.ipynb` to see how the three chunking strategies compare, then `Compare Open SOurce Embedding Models for RAG.ipynb` to see how the models differ in speed and accuracy.
+Good starting point is `Chunking&Embedings.ipynb` → then `Compare Open SOurce Embedding Models` to see how the models stack up.
 
-Free Gemini API key available at [Google AI Studio](https://aistudio.google.com).
+## ⚙️ Stack
+Python · LlamaIndex · ChromaDB · HuggingFace Sentence Transformers · Gemini 2.5 Flash · Scikit-learn · Matplotlib
