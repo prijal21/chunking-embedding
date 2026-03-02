@@ -22,3 +22,15 @@ For embeddings, I compared 4 open-source models on how fast they generate embedd
 
 ## Stack
 Python, LlamaIndex, ChromaDB, HuggingFace Sentence Transformers, Gemini 2.5 Flash, Scikit-learn, Matplotlib
+
+## How to run it
+
+Everything runs on Google Colab, nothing to install locally.
+
+1. Open any notebook from this repo in Colab
+2. Add your Gemini API key in Colab Secrets (key icon on the left sidebar) under the name `GOOGLE_API_KEY`
+3. Run cells from top to bottom
+
+A good starting point is `Chunking&Embedings.ipynb` to see how the three chunking strategies compare, then `Compare Open SOurce Embedding Models for RAG.ipynb` to see how the models differ in speed and accuracy.
+
+Free Gemini API key available at [Google AI Studio](https://aistudio.google.com).
